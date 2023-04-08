@@ -46,7 +46,7 @@ public class Nodo {
         return this.j;
     }
 
-    public boolean getEsMIna(){
+    public boolean getEsMina(){
         return this.esMina;
     }
 
