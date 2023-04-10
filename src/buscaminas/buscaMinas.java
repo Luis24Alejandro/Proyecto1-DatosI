@@ -18,6 +18,7 @@ public class buscaMinas extends Application {
         Scene scene = new Scene(root);
         //Se ejecuta el abrir la escena
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
 
 

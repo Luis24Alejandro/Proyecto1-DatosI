@@ -77,7 +77,8 @@ public class DummyController implements Initializable {
         for(int i = 0; i < 8; i++){
             for(int j = 0; j < 8; j++){
 
-                Button btn = new Button(" ");
+                Button btn = new Button("");
+                btn.setPrefSize(41,41);
 
                 int a = i;
                 int b = j;
@@ -109,8 +110,6 @@ public class DummyController implements Initializable {
     }
 
 
-    Image image = new Image("Flag2.PNG");
-    ImageView imageView = new ImageView(image);
 
 
     public void estadoBoton(int a, int b, boolean estado){
@@ -137,6 +136,7 @@ public class DummyController implements Initializable {
                         this.matriz.getMatriz()[a][b].setBandera(false);
 
                         btn.setText(" ");
+                        btn.setPrefSize(41,41);
 
                         btn.setId("boton");
 
@@ -159,6 +159,9 @@ public class DummyController implements Initializable {
                     }
                     else{
                         this.matriz.getMatriz()[a][b].setBandera(true);
+
+                        Image image = new Image("Bandera4.PNG");
+                        ImageView imageView = new ImageView(image);
 
                         btn.setId("bandera");
 

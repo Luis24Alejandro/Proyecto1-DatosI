@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buscaminas.DummyController">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buscaminas.AdvancedController">
    <children>
-      <GridPane fx:id="gpMatriz" layoutX="80.0" layoutY="130.0" prefHeight="340.0" prefWidth="340.0">
+      <GridPane fx:id="gpMatriz" gridLinesVisible="true" layoutX="80.0" layoutY="130.0" prefHeight="340.0" prefWidth="340.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -37,12 +37,12 @@
             <Font name="Times New Roman" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="190.0" layoutY="42.0" text="Banderas colocadas:">
+      <Label layoutX="327.0" layoutY="42.0" text="Minas:">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnPistas" layoutX="401.0" layoutY="38.0" mnemonicParsing="false" text="Pistas">
+      <Button fx:id="btnPistas" layoutX="199.0" layoutY="37.0" mnemonicParsing="false" text="Pistas">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
@@ -52,10 +52,12 @@
             <Font name="Times New Roman" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="lbBanderas" layoutX="315.0" layoutY="42.0" prefHeight="10.0" prefWidth="45.0">
+      <Label fx:id="lbMinas" layoutX="375.0" layoutY="42.0" prefHeight="10.0" prefWidth="45.0">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font>
       </Label>
+      <Label fx:id="lbPistas" layoutX="175.0" layoutY="82.0" prefHeight="28.0" prefWidth="106.0" />
+      <Label fx:id="lbGanar" layoutX="167.0" layoutY="78.0" prefHeight="37.0" prefWidth="122.0" />
    </children>
 </AnchorPane>

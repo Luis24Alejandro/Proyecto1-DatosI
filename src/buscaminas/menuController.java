@@ -32,6 +32,7 @@ public class menuController implements Initializable{
         Parent root = FXMLLoader.load(getClass().getResource("Dummy.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -41,6 +42,7 @@ public class menuController implements Initializable{
      Parent root = FXMLLoader.load(getClass().getResource("Advanced.fxml"));
      Scene scene = new Scene(root);
      stage.setScene(scene);
+     stage.setResizable(false);
      stage.show();
 
     }
