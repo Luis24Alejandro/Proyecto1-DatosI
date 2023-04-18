@@ -40,7 +40,7 @@
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <Button fx:id="btnPistas" layoutX="215.0" layoutY="23.0" mnemonicParsing="false" text="Pistas">
+      <Button fx:id="btnPistas" layoutX="215.0" layoutY="23.0" mnemonicParsing="false" onAction="#sugerencia" text="Pistas">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
@@ -55,11 +55,11 @@
             <Font name="Times New Roman" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="lbGanar" layoutX="160.0" layoutY="82.0" prefHeight="28.0" prefWidth="168.0">
+      <Label fx:id="lbGanar" layoutX="160.0" layoutY="102.0" prefHeight="28.0" prefWidth="168.0">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lbPistas" layoutX="189.0" layoutY="60.0" prefHeight="17.0" prefWidth="123.0" />
+      <Label fx:id="lbPistas" layoutX="104.0" layoutY="60.0" prefHeight="28.0" prefWidth="280.0" />
    </children>
 </AnchorPane>
