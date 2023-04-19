@@ -2,7 +2,6 @@ package buscaminas;
 
 import com.fazecast.jSerialComm.SerialPort;
 import java.awt.Robot;
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.InputStream;

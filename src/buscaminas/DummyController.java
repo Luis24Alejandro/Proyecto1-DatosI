@@ -11,12 +11,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javax.swing.Timer;
-import java.awt.*;
 import java.io.IOException;
 import java.util.ResourceBundle;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,7 +21,7 @@ import javafx.scene.text.Font;
 import javafx.geometry.Pos;
 import javafx.geometry.HPos;
 import javafx.scene.paint.Color;
-import java.awt.AWTException;
+
 
 public class DummyController implements Initializable {
 

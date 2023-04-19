@@ -17,15 +17,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-
 import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import java.awt.AWTException;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 

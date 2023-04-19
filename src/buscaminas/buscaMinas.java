@@ -7,10 +7,15 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 
 
-
-
+/**
+ * Esta es la clase main que inicia el juego al abrir el fxml
+ * @author luis
+ */
 public class buscaMinas extends Application {
     @Override
+    /**
+     * Metodo start que abre el FXML del menú
+     */
     public void start(Stage primaryStage) throws Exception {
         //Declara el FXML
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
@@ -23,6 +28,11 @@ public class buscaMinas extends Application {
 
 
     }
+
+    /**
+     * Metodo main
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
 

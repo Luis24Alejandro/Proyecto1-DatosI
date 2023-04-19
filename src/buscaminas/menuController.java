@@ -11,6 +11,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 
+/**
+ * Clase menú que controla la interfaz del menú
+ *
+ */
 public class menuController implements Initializable{
 
     @FXML
@@ -21,12 +25,18 @@ public class menuController implements Initializable{
 
 
     @Override
+    /**
+     * Método que inicia la ventanda
+     */
 
     public void initialize(URL url, ResourceBundle rb){
         // TODO
     }
 
     @FXML
+    /**
+     * Método que se activa al precionar el botón dummy
+     */
     private void newDummy(ActionEvent event) throws Exception{
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("Dummy.fxml"));
@@ -37,6 +47,10 @@ public class menuController implements Initializable{
     }
 
     @FXML
+    /**
+     * Método que se activa al precionar el botón Advanced
+     *
+     */
     private void newAdvanced(ActionEvent event) throws Exception{
      Stage stage = new Stage();
      Parent root = FXMLLoader.load(getClass().getResource("Advanced.fxml"));
