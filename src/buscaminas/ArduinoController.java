@@ -45,7 +45,7 @@ public class ArduinoController extends Thread {
             System.out.println(i + ". " + puertosDisponibles[i].getSystemPortName() + "== " + puertosDisponibles[i].getDescriptivePortName() );
         }
 
-        this.puertoArduino = SerialPort.getCommPort("cu.usbmodem142301");
+        this.puertoArduino = SerialPort.getCommPort("COM4");
 
         // Se define la velocidad de comunicación con el arduino
         this.puertoArduino.setBaudRate(9600);
