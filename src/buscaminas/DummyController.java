@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javax.swing.Timer;
 import java.awt.*;
+import java.io.IOException;
 import java.util.ResourceBundle;
 import java.net.URL;
 import java.util.logging.Level;
@@ -56,8 +57,6 @@ public class DummyController implements Initializable {
     @FXML
     private Label lbPistas;
 
-    //@FXML
-    //private Button btnPistas;
 
     private Timer tiempo;
 
@@ -82,7 +81,7 @@ public class DummyController implements Initializable {
 
         this.control = new ArduinoController();
         this.control.start();
-        //this.control.
+        this.control.setMatriz(this.matriz);
 
     }
 
@@ -113,7 +112,11 @@ public class DummyController implements Initializable {
 
                             btn.setVisible(false);
 
-                            estadoBoton(a, b, false);
+                            try {
+                                estadoBoton(a, b, false);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
 
                         }
                     }
@@ -127,14 +130,18 @@ public class DummyController implements Initializable {
 
 
 
-    public void estadoBoton(int a, int b, boolean estado){
+    public void estadoBoton(int a, int b, boolean estado) throws IOException {
 
         if (estado){
             this.minasFaltantes++;
+
+            this.control.mensajeSerial("N");
         }
         else{
 
             this.minasFaltantes--;
+
+            this.control.mensajeSerial("B");
         }
         lbMinas.setText(String.valueOf(this.minasFaltantes));
 
@@ -167,7 +174,11 @@ public class DummyController implements Initializable {
                                 if(event.getButton() == MouseButton.SECONDARY){
 
                                     btn.setVisible(false);
-                                    estadoBoton(a, b, false);
+                                    try {
+                                        estadoBoton(a, b, false);
+                                    } catch (IOException e) {
+                                        throw new RuntimeException(e);
+                                    }
                                 }
                             }
                         });
@@ -189,7 +200,11 @@ public class DummyController implements Initializable {
 
                                     btn.setVisible(false);
 
-                                    estadoBoton(a, b, true);
+                                    try {
+                                        estadoBoton(a, b, true);
+                                    } catch (IOException e) {
+                                        throw new RuntimeException(e);
+                                    }
                                 }
                             }
                         });
@@ -381,7 +396,7 @@ public class DummyController implements Initializable {
                             if(x == 0){
 
                                 if(game){
-                                    lb.setText("*");
+                                    lb.setText("J");
                                 }else{
 
                                     lb.setText("");

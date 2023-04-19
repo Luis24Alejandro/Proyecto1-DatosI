@@ -22,6 +22,13 @@ import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import java.awt.AWTException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+
 public class AdvancedController implements Initializable {
 
 
@@ -36,6 +43,8 @@ public class AdvancedController implements Initializable {
     private int turno = 0;
 
     private Matriz matriz;
+
+    private pilaPistas pistas = new pilaPistas();
 
     @FXML
     private GridPane gpMatriz;
@@ -52,11 +61,20 @@ public class AdvancedController implements Initializable {
     @FXML
     private Label lbPistas;
 
-    @FXML
-    private Button btnPistas;
-
     private Timer tiempo;
 
+
+
+    private Lista lGeneral = new Lista();
+    private Lista lSegura = new Lista();
+    private Lista lInsegura = new Lista();
+    private Lista lControl = new Lista();
+
+    private ArduinoController control;
+
+    /**
+     * Método que permite inicializar la ventana
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -72,7 +90,13 @@ public class AdvancedController implements Initializable {
         this.tiempo.start();
 
         inicio();
+
+        this.control = new ArduinoController();
+        this.control.start();
+        //this.control.
+
     }
+
 
     public void inicio(){
 
@@ -162,7 +186,7 @@ public class AdvancedController implements Initializable {
                     else{
                         this.matriz.getMatriz()[a][b].setBandera(true);
 
-                        Image image = new Image("Bandera4.PNG");
+                        Image image = new Image("Bandera5.PNG");
                         ImageView imageView = new ImageView(image);
 
                         btn.setId("bandera");
@@ -196,7 +220,8 @@ public class AdvancedController implements Initializable {
             this.turno++;
         }
         if(this.turno == 5 && game){
-            // addSugerencia();
+
+            addPista();
             this.turno = 0;
         }
 
@@ -367,7 +392,7 @@ public class AdvancedController implements Initializable {
                             if(x == 0){
 
                                 if(game){
-                                    lb.setText("*");
+                                    lb.setText("J");
                                 }else{
 
                                     lb.setText("");
@@ -425,7 +450,7 @@ public class AdvancedController implements Initializable {
 
                     if(this.matriz.getMatriz()[i][j].getState()){
 
-                        lb = new Label("0");
+                        lb = new Label("x");
 
                         lb.setAlignment(Pos.CENTER);
                         lb.setFont(new Font("Arial",12));
@@ -455,11 +480,37 @@ public class AdvancedController implements Initializable {
     @FXML
     private void sugerencia(ActionEvent event){
 
+        if(this.pistas.peek( ) == null){
 
+            this.lbPistas.setText("Sin pistas");
+        }
+        else{
+            this.lbPistas.setText((String) this.pistas.peek());
+            this.pistas.pop();
+        }
+    }
+
+    public void addPista() {
+
+        boolean enPila = false;
+
+        while(!enPila){
+
+            int i = (int)(Math.random()*8);
+            int j = (int)(Math.random()*8);
+
+            if(!this.matriz.getMatriz()[i][j].getAbierta() && !this.matriz.getMatriz()[i][j].getState()){
+
+                this.pistas.push("Pista: El recuadoro " + String.valueOf(i + 1) + " ," + String.valueOf( j + 1) + " es seguro de jugar." );
+
+                enPila = true;
+            }
+        }
     }
 
 
     public void turnoPC(){
+
 
         boolean movimiento = false;
 
