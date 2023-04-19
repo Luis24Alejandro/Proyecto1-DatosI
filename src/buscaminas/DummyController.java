@@ -11,8 +11,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javax.swing.Timer;
+import java.awt.*;
 import java.util.ResourceBundle;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +23,7 @@ import javafx.scene.text.Font;
 import javafx.geometry.Pos;
 import javafx.geometry.HPos;
 import javafx.scene.paint.Color;
+import java.awt.AWTException;
 
 public class DummyController implements Initializable {
 
@@ -52,10 +56,13 @@ public class DummyController implements Initializable {
     @FXML
     private Label lbPistas;
 
-    @FXML
-    private Button btnPistas;
+    //@FXML
+    //private Button btnPistas;
 
     private Timer tiempo;
+
+    private ArduinoController control;
+
 
 
     @Override
@@ -72,7 +79,13 @@ public class DummyController implements Initializable {
         this.tiempo.start();
 
         inicio();
+
+        this.control = new ArduinoController();
+        this.control.start();
+        //this.control.
+
     }
+
 
     public void inicio(){
 
